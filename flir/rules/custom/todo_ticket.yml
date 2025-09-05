@@ -1,0 +1,12 @@
+id: todo_ticket
+language: r
+severity: warning
+rule:
+  kind: comment
+  regex: '(?i)#(|\s+)\b(todo|fixme)\b'
+  not:
+    kind: comment
+    regex: '((?i)#(|\s+)\b(todo|fixme)\(\w+?\-\d+?\))|(#.+nolint)'
+message: |
+  TODO comments should include a reference to a Linear ticket in format
+  `TODO(ZZZZ-####):...` or be removed before committing

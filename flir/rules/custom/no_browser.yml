@@ -1,0 +1,9 @@
+id: no_browser
+language: r
+severity: warning
+rule:
+  any:
+   - pattern: browser()
+   - pattern: browser($$$ELEMS)
+fix: ""
+message: Do not commit browser() calls.

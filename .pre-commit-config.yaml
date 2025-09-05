@@ -1,0 +1,30 @@
+# All available hooks: https://pre-commit.com/hooks.html
+repos:
+- repo: local
+  hooks:
+    -   id: lint-files-flir
+        name: lint files with flir
+        language: docker_image
+        files: '\.[R|r]$'
+        entry: zelus/precommit:production /precommit/lint
+    -   id: style-files-air
+        name: style files with air
+        language: docker_image
+        files: '\.[R|r]$'
+        entry: zelus/precommit:production /precommit/style
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: check-added-large-files
+        args: ['--maxkb=500']
+    -   id: end-of-file-fixer
+        exclude: '\.Rd'
+    -   id: no-commit-to-branch
+        args: ['--branch=main']
+-   repo: local
+    hooks:
+    -   id: forbid-to-commit
+        name: Don't commit common R artifacts
+        entry: Cannot commit .Rhistory, .RData, .Rds or .rds.
+        language: fail
+        files: '\.Rhistory|\.RData|\.Rds|\.rds$'
