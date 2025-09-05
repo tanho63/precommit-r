@@ -44,5 +44,6 @@ browser()
 # commit this file
 git add test.R
 git commit -m 'test'
-# see pre-commit outputs, both the diff and how it errors and calls out line numbers of lint errors it can't fix
+# see pre-commit outputs, both the diff and how it errors and calls out line
+# numbers of lint errors it can't fix
 ```
