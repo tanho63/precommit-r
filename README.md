@@ -1,4 +1,6 @@
-# tanho63/precommit-r: air and flir in a docker container
+# tanho63/precommit-r
+
+air and flir in a docker container
 
 ## Goals
 
@@ -20,8 +22,6 @@ via a central docker image that can be used by all team/org members
 - then run normal git add + commit to see precommit in action
 
 ```sh
-# ensure precommit is installed
-pre-commit install
 # create a file to test commits
 echo '
 library(flir)
